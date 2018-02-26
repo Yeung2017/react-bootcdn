@@ -1,0 +1,23 @@
+.c-TitleCaption {
+  color: #fff;
+  text-align: center;
+}
+
+.c-TitleCaption__title {
+  margin-bottom: 10px;
+  font-weight: 500;
+  font-size: 56px;
+  text-shadow: -5px 5px 0 rgba(0, 0, 0, .1);
+}
+
+.c-TitleCaption__subTitle {
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 30px;
+}
+
+.c-TitleCaption__desc {
+  font-weight: 200;
+  font-size: 14px;
+  line-height: 30px;
+}

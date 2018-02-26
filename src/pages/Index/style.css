@@ -1,3 +1,8 @@
 .page-index__header {
+  padding-bottom: 20px;
   background-color: rgb(39, 174, 96);
+}
+
+.page-index__header .c-TitleCaption {
+  margin-top: 20px;
 }
