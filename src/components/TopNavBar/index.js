@@ -1,13 +1,13 @@
 import React from 'react';
 import Logo from '../Logo';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 import './style.css';
 
 const TopNavBar = () => {
   return (
     <div className="c-topnavbar">
-      <Logo />
+      <Logo/>
       <ul className="c-topnavbar__nav-link">
         <li>
           <Link to="/api" className="nav-link__item">Api</Link>

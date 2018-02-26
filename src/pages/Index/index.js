@@ -11,11 +11,14 @@ const PageIndex = () => {
     <div className="page-index">
       <header className="page-index__header">
         <div className="container">
-          <TopNavBar />
-          <TitleCaption title="BootCDN" subTitle="稳定、快速、免费的前端开源项目 CDN 加速服务" desc="共收录了 3318 个前端开源项目" />
+          <TopNavBar/>
+          <TitleCaption
+            title="BootCDN"
+            subTitle="稳定、快速、免费的前端开源项目 CDN 加速服务"
+            desc="共收录了 3318 个前端开源项目"/>
           <div className="row justify-content-md-center">
             <div className="col-md-8">
-              <Search />
+              <Search/>
             </div>
           </div>
         </div>
