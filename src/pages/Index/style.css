@@ -6,3 +6,8 @@
 .page-index__header .c-TitleCaption {
   margin-top: 20px;
 }
+
+.page-index__header .c-search {
+  margin-top: 30px;
+  margin-bottom: 20px;
+}

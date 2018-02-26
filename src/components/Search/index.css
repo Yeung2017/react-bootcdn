@@ -1,0 +1,25 @@
+.c-search {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+}
+
+.c-search.is-active {
+  box-shadow: 0 0 6px rgba(0, 0, 0, .6);
+}
+
+.c-search__input {
+  flex: 1;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  padding-left: 30px;
+  color: #a3a3a4;
+  font-size: 16px;
+}
+
+.c-search__icon {
+  width: 30px;
+  cursor: pointer;
+  text-align: center;
+  color: #a3a3a4;
+}
