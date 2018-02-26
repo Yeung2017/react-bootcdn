@@ -1,0 +1,8 @@
+.c-logo {
+  display: inline-block;
+  width: 124px;
+  height: 30px;
+  text-indent: -9999px;
+  background: url('./bootcdn.svg') 0 0 no-repeat;
+  background-size: contain;
+}

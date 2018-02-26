@@ -12,9 +12,9 @@ class App extends Component {
       <Router>
         <Switch>
           <Route path="/lib-details/:id" component={PageDetails} />
-          <Route exact path="/api" component={PageApi} />
-          <Route exact path="/blog" component={PageBlog} />
-          <Route exact path="/about" component={PageAbout} />
+          <Route path="/api" component={PageApi} />
+          <Route path="/blog" component={PageBlog} />
+          <Route path="/about" component={PageAbout} />
           <Route exact path="/" component={PageIndex} />
         </Switch>
       </Router>
