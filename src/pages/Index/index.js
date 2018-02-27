@@ -6,7 +6,6 @@ import Search from '../../components/Search';
 import MostPopularLibBar from '../../components/MostPopularLibBar';
 import LibList from '../../components/LibList';
 
-import 'bootstrap/dist/css/bootstrap.css';
 import './style.css';
 
 const mostPopularLibBarData = [
