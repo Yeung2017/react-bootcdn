@@ -1,6 +1,6 @@
 import {
   combineReducers
 } from 'redux';
-import libsReducer from './state/libs/reducer';
+import libs from './state/libs/reducer';
 
-export default combineReducers({libsReducer});
+export default combineReducers({libs});

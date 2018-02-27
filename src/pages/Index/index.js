@@ -5,7 +5,7 @@ import TopNavBar from '../../components/TopNavBar';
 import TitleCaption from '../../components/TitleCaption';
 import Search from '../../components/Search';
 import MostPopularLibBar from '../../components/MostPopularLibBar';
-import LibList from '../../components/LibList';
+import VisibleLibsList from '../../components_redux/VisibleLibsList';
 
 import './style.css';
 
@@ -76,7 +76,7 @@ const PageIndex = () => {
         </div>
         <div className="page-index__LibList">
           <div className="container">
-            <LibList/>
+            <VisibleLibsList />
           </div>
         </div>
       </div>
