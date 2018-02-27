@@ -1,5 +1,12 @@
 .c-MostPopularLibBar-item {
   margin-top: 10px;
+  opacity: .6;
+  filter: grayscale(90%)
+}
+
+.c-MostPopularLibBar-item:hover {
+  opacity: 1;
+  filter: none;
 }
 
 .c-MostPopularLibBarItem__img {
