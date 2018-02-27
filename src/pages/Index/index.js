@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import { Button } from 'antd';
 import TopNavBar from '../../components/TopNavBar';
 import TitleCaption from '../../components/TitleCaption';
 import Search from '../../components/Search';
@@ -80,6 +81,7 @@ const PageIndex = () => {
           </div>
         </div>
       </div>
+      <Button>按钮</Button>
     </div>
   );
 };
