@@ -38,3 +38,7 @@ input {
 input::-webkit-input-placeholder {
   color: rgb(117, 117, 110);
 }
+
+.iconfont {
+  font-size: inherit;
+}

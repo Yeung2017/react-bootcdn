@@ -1,0 +1,11 @@
+.c-LibList {
+  border: 1px solid rgb(236, 240, 241)
+}
+
+.c-LibList__alllib {
+  padding-left: 20px;
+  text-align: center;
+  color: #27ae60;
+  font-size: 16px;
+  cursor: pointer;
+}
