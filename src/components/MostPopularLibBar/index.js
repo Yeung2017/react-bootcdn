@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {Row, Col} from 'antd';
 import MostPopularLibBarList from './List';
 
 import './index.css';
@@ -8,11 +9,11 @@ const MostPopularLibBar = ({data}) => {
   return (
     <div className="c-MostPopularLibBar">
       <div className="container">
-        <div className="row justify-content-around">
-          <div className="col-md-8">
-            <MostPopularLibBarList data={data} />
-          </div>
-        </div>
+        <Row type="flex" justify="center">
+          <Col md={16}>
+            <MostPopularLibBarList data={data}/>
+          </Col>
+        </Row>
       </div>
     </div>
   );

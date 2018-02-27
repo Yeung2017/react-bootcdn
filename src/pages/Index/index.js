@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import { Button } from 'antd';
+import {Row, Col} from 'antd';
 import TopNavBar from '../../components/TopNavBar';
 import TitleCaption from '../../components/TitleCaption';
 import Search from '../../components/Search';
@@ -48,6 +48,7 @@ const mostPopularLibBarData = [
 const PageIndex = () => {
   return (
     <div className="page-index">
+      {/* header */}
       <header className="page-index__header">
         <div className="container">
           <TopNavBar/>
@@ -55,24 +56,22 @@ const PageIndex = () => {
             title="BootCDN"
             subTitle="稳定、快速、免费的前端开源项目 CDN 加速服务"
             desc="共收录了 3318 个前端开源项目"/>
-          <div className="row justify-content-md-center">
-            <div className="col-md-8">
+          <Row type="flex" justify="center">
+            <Col md={16}>
               <Search/>
-            </div>
-          </div>
+            </Col>
+          </Row>
         </div>
       </header>
+      {/* header end */}
+      {/* main */}
       <div className="main">
         <div className="page-index__MostPopularLibBar">
           <MostPopularLibBar data={mostPopularLibBarData}/>
         </div>
         <div className="page-index__notice">
           <div className="container">
-            <div className="row">
-              <div className="col-sm-12 text-right">
-                <Link to='/blog' className="page-index__notice-link">拒绝流量劫持，全面使用 HTTPS！</Link>
-              </div>
-            </div>
+            <Link to='/blog' className="page-index__notice-link">拒绝流量劫持，全面使用 HTTPS！</Link>
           </div>
         </div>
         <div className="page-index__LibList">
@@ -81,7 +80,7 @@ const PageIndex = () => {
           </div>
         </div>
       </div>
-      <Button>按钮</Button>
+      {/* main end */}
     </div>
   );
 };
