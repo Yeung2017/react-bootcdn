@@ -17,3 +17,17 @@
   margin-top: 30px;
   margin-bottom: 20px;
 }
+
+.page-index__notice {
+  padding-top: 30px;
+}
+
+.page-index__notice-link {
+  color: #aaa;
+  font-size: 14px;
+}
+
+.page-index__notice-link:hover {
+  text-decoration: underline;
+  color: #000;
+}

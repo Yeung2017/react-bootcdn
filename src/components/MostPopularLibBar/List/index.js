@@ -6,8 +6,8 @@ import './index.css';
 
 const MostPopularLibBarList = ({data}) => {
   return (
-    <ul class="c-MostPopularLibBarList">
-      {data.map((v) => (<MostPopularLibBarItem imgUrl={v.imgUrl} linkTo={v.linkTo} text={v.text}/>))}
+    <ul className="c-MostPopularLibBarList">
+      {data.map((v) => (<MostPopularLibBarItem key={v.text} imgUrl={v.imgUrl} linkTo={v.linkTo} text={v.text}/>))}
     </ul>
   );
 };

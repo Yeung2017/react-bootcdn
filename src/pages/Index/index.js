@@ -1,8 +1,10 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import TopNavBar from '../../components/TopNavBar';
 import TitleCaption from '../../components/TitleCaption';
 import Search from '../../components/Search';
 import MostPopularLibBar from '../../components/MostPopularLibBar';
+import LibList from '../../components/LibList';
 
 import 'bootstrap/dist/css/bootstrap.css';
 import './style.css';
@@ -11,42 +13,35 @@ const mostPopularLibBarData = [
   {
     imgUrl: '/img/bootstrap.svg',
     LinkTo: '/',
-    text: 'bootstrap',
-  },
-  {
+    text: 'bootstrap'
+  }, {
     imgUrl: '/img/react.svg',
     LinkTo: '/',
-    text: 'react',
-  },
-  {
+    text: 'react'
+  }, {
     imgUrl: '/img/jquery.svg',
     LinkTo: '/',
-    text: 'jquery',
-  },
-  {
+    text: 'jquery'
+  }, {
     imgUrl: '/img/angular-icon.svg',
     LinkTo: '/',
-    text: 'angular',
-  },
-  {
+    text: 'angular'
+  }, {
     imgUrl: '/img/vue.svg',
     LinkTo: '/',
-    text: 'vue',
-  },
-  {
+    text: 'vue'
+  }, {
     imgUrl: '/img/backbone-icon.svg',
     LinkTo: '/',
-    text: 'backbone',
-  },
-  {
+    text: 'backbone'
+  }, {
     imgUrl: '/img/lodash.svg',
     LinkTo: '/',
-    text: 'lodash',
-  },
-  {
+    text: 'lodash'
+  }, {
     imgUrl: '/img/momentjs.svg',
     LinkTo: '/',
-    text: 'momentjs',
+    text: 'momentjs'
   }
 ];
 
@@ -67,8 +62,24 @@ const PageIndex = () => {
           </div>
         </div>
       </header>
-      <div className="page-index__MostPopularLibBar">
-        <MostPopularLibBar data={mostPopularLibBarData} />
+      <div className="main">
+        <div className="page-index__MostPopularLibBar">
+          <MostPopularLibBar data={mostPopularLibBarData}/>
+        </div>
+        <div className="page-index__notice">
+          <div className="container">
+            <div className="row">
+              <div className="col-sm-12 text-right">
+                <Link to='/blog' className="page-index__notice-link">拒绝流量劫持，全面使用 HTTPS！</Link>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="page-index__LibList">
+          <div className="container">
+            <LibList/>
+          </div>
+        </div>
       </div>
     </div>
   );
