@@ -3,6 +3,12 @@
   background-color: rgb(39, 174, 96);
 }
 
+@media (min-width: 768px) {
+  .page-index__header {
+    padding-bottom: 80px;
+  }
+}
+
 .page-index__header .c-TitleCaption {
   margin-top: 20px;
 }
