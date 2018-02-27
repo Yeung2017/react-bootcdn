@@ -7,17 +7,20 @@
   margin-bottom: 10px;
   font-weight: 500;
   font-size: 56px;
+  color: #fff;
   text-shadow: -5px 5px 0 rgba(0, 0, 0, .1);
 }
 
 .c-TitleCaption__subTitle {
   font-weight: 400;
   font-size: 22px;
+  color: #fff;
   line-height: 30px;
 }
 
 .c-TitleCaption__desc {
   font-weight: 200;
   font-size: 14px;
+  color: #fff;
   line-height: 30px;
 }

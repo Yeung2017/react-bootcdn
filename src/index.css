@@ -1,16 +1,3 @@
-body {
-  font-family: 'STHeiti', 'Microsoft YaHei', Helvetica, Arial, sans-serif;
-}
-
-body * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  user-select: none;
-  outline: none;
-  -webkit-tap-highlight-color: transparent;
-}
-
 a,
 a:link,
 a:visited,
@@ -27,6 +14,8 @@ ol,
 dt,
 dd {
   list-style-type: none;
+  margin: 0;
+  bottom: 0;
 }
 
 img[src=""],
@@ -41,10 +30,11 @@ input {
 }
 
 input {
-  border: 0;
   user-select: auto;
+  border: 0;
   outline: none;
 }
+
 input::-webkit-input-placeholder {
   color: rgb(117, 117, 110);
 }
