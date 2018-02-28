@@ -2,6 +2,10 @@
   border: 1px solid rgb(236, 240, 241)
 }
 
+.c-LibList>ul li:last-child .c-LibListItem{
+  border-bottom: none;
+}
+
 .c-LibList__alllib {
   padding-left: 20px;
   text-align: center;

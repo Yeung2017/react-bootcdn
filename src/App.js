@@ -18,6 +18,7 @@ class App extends Component {
           <Route path="/api" component={PageApi} />
           <Route path="/blog" component={PageBlog} />
           <Route path="/about" component={PageAbout} />
+          <Route path="/all" component={PageIndex} />
           <Route exact path="/" component={PageIndex} />
         </Switch>
       </Router>

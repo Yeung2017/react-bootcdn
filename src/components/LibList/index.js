@@ -5,19 +5,23 @@ import LibListItem from './Item';
 
 import './index.css';
 
-const LibList = ({data}) => {
+const LibList = ({data, match}) => {
   return (
     <div className="c-LibList">
-      <ul style={{marginBottom: 0}}>
+      <ul style={{
+        marginBottom: 0
+      }}>
         {data.map((v => (
-          <li>
-            <Link to="/"><LibListItem name={v[0]} desc={v[1]} star={[v[2]]}/></Link>
+          <li key={v[0]}>
+            <Link to="/"><LibListItem name={v[0]} desc={v[1]} star={v[2]}/></Link>
           </li>
         )))}
         <li>
-          <LibListItem className="c-LibList__alllib">
-            <span>所有开源列表</span>
-          </LibListItem>
+          <Link to="/all">
+            <LibListItem className="c-LibList__alllib">
+              <span>所有开源列表</span>
+            </LibListItem>
+          </Link>
         </li>
       </ul>
 
