@@ -6,15 +6,15 @@ const shouldFetchPosts = (state) => {
 
 export const invalidateSubreddit = (didInvalidate) => ({type: INVALIDATE_LIBS, didInvalidate});
 
-export const updateLibs = (data) => ({UPDATE_LIBS, data});
+export const updateLibs = (data) => ({type: UPDATE_LIBS, data});
 
-const receivePostsLibs = () => ({
-  type: RECEIVE_POSTS_LIBS
-});
+const receivePostsLibs = (data) => {
+  return dispatch => {
+    dispatch(updateLibs(data));
+  };
+};
 
-const requestPostsLibs = () => ({
-  type: REQUEST_POSTS_LIBS
-});
+const requestPostsLibs = () => ({type: REQUEST_POSTS_LIBS});
 
 const fetchPostsLibs = (subreddit) => {
   return dispatch => {

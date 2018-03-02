@@ -76,7 +76,7 @@ const PageIndex = () => {
         </div>
         <div className="page-index__LibList">
           <div className="container">
-            <VisibleLibsList />
+            <VisibleLibsList/>
           </div>
         </div>
       </div>
