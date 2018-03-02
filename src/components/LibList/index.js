@@ -5,7 +5,7 @@ import LibListItem from './Item';
 
 import './index.css';
 
-const LibList = ({data, match}) => {
+const LibList = ({data, isShowAllLibLink}) => {
   return (
     <div className="c-LibList">
       <ul style={{
@@ -16,13 +16,15 @@ const LibList = ({data, match}) => {
             <Link to="/"><LibListItem name={v[0]} desc={v[1]} star={v[2]}/></Link>
           </li>
         )))}
-        <li>
-          <Link to="/all">
-            <LibListItem className="c-LibList__alllib">
-              <span>所有开源列表</span>
-            </LibListItem>
-          </Link>
-        </li>
+        {isShowAllLibLink
+          ? <li>
+              <Link to="/all">
+                <LibListItem className="c-LibList__alllib">
+                  <span>所有开源列表</span>
+                </LibListItem>
+              </Link>
+            </li>
+          : null}
       </ul>
 
     </div>
@@ -30,11 +32,13 @@ const LibList = ({data, match}) => {
 };
 
 LibList.propTypes = {
-  data: PropTypes.array
+  data: PropTypes.array,
+  isShowAllLibLink: PropTypes.bool
 };
 
 LibList.defaultProps = {
-  data: []
+  data: [],
+  isShowAllLibLink: false
 };
 
 export default LibList;
