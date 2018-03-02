@@ -14,11 +14,11 @@ class App extends Component {
       <Provider store={store}>
       <Router>
         <Switch>
-          <Route path="/lib-details/:id" component={PageDetails} />
           <Route path="/api" component={PageApi} />
           <Route path="/blog" component={PageBlog} />
           <Route path="/about" component={PageAbout} />
-          <Route path="/all" component={PageIndex} />
+          <Route path="/lib-details/:id" component={PageDetails} />
+          <Route path="/:all" component={PageIndex} />
           <Route exact path="/" component={PageIndex} />
         </Switch>
       </Router>

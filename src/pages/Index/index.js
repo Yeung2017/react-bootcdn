@@ -45,7 +45,8 @@ const mostPopularLibBarData = [
   }
 ];
 
-const PageIndex = () => {
+const PageIndex = ({match}) => {
+  const {all=''} = match.params;
   return (
     <div className="page-index">
       {/* header */}
@@ -76,7 +77,7 @@ const PageIndex = () => {
         </div>
         <div className="page-index__LibList">
           <div className="container">
-            <VisibleLibsList/>
+            <VisibleLibsList isShowAllLibLink={all!=='all'}/>
           </div>
         </div>
       </div>
