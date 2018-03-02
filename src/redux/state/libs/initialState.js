@@ -1,7 +1,8 @@
+import { fetchStatus } from '../../../constants/fetchStatus';
+
 export default {
-  isFetching: false,
-  fetchStatus: '',
-  didInvalidate: true,
+  fetchStatus: fetchStatus.INITIAL,
+  isNoneffective: true,
   lastUpdated: -1,
   data: [
     [

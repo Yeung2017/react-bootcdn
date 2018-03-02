@@ -1,34 +1,19 @@
-import {INVALIDATE_LIBS, UPDATE_LIBS, RECEIVE_POSTS_LIBS, REQUEST_POSTS_LIBS} from './actionTypes';
+import {FETCH_LIBS_STARTED, FETCH_LIBS_SUCCESS, FETCH_LIBS_FAILURE} from './actionTypes';
 
-const shouldFetchPosts = (state) => {
-  return !state.isFetching;
-};
+export const fetchLibsStarted = () => ({type: FETCH_LIBS_STARTED});
 
-export const invalidateSubreddit = (didInvalidate) => ({type: INVALIDATE_LIBS, didInvalidate});
+export const fetchLibsSuccess = (data) => ({type: FETCH_LIBS_SUCCESS, data});
 
-export const updateLibs = (data) => ({type: UPDATE_LIBS, data});
+export const fetchLibsFailure = () => ({type: FETCH_LIBS_FAILURE});
 
-const receivePostsLibs = (data) => {
-  return dispatch => {
-    dispatch(updateLibs(data));
-  };
-};
-
-const requestPostsLibs = () => ({type: REQUEST_POSTS_LIBS});
-
-const fetchPostsLibs = (subreddit) => {
-  return dispatch => {
-    dispatch(requestPostsLibs(subreddit));
-    return fetch('https://api.bootcdn.cn/libraries.min.json')
-      .then(response => response.json())
-      .then(json => dispatch(receivePostsLibs(json)));
-  };
-};
-
-export const fetchPostsIfNeeded = () => {
-  return (dispatch, getState) => {
-    if (shouldFetchPosts(getState())) {
-      return dispatch(fetchPostsLibs());
+export const fetchLibs = (dispatch) => {
+  dispatch(fetchLibsStarted());
+  const url = 'https://api.bootcdn.cn/libraries.min.json';
+  fetch(url).then(res => {
+    if (res.status !== 200) {
+      dispatch(fetchLibsFailure());
+      throw new Error('Fail to get response with status ' + res.status);
     }
-  };
+    return res.json();
+  }).then(data => dispatch(fetchLibsSuccess(data)));
 };

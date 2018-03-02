@@ -1,34 +1,31 @@
-import {REQUEST_POSTS_LIBS, RECEIVE_POSTS_LIBS, UPDATE_LIBS, INVALIDATE_LIBS} from './actionTypes';
+import {FETCH_LIBS_STARTED, FETCH_LIBS_SUCCESS, FETCH_LIBS_FAILURE} from './actionTypes';
 import initialState from './initialState';
+import {fetchStatus} from '../../../constants/fetchStatus';
 
 export default(state = initialState, action) => {
   switch (action.type) {
-    case REQUEST_POSTS_LIBS:
+    case FETCH_LIBS_STARTED:
       return {
         ...state,
         ...{
-          isFetching: true
+          fetchStatus: fetchStatus.FETCHING
         }
       };
-    case RECEIVE_POSTS_LIBS:
+    case FETCH_LIBS_SUCCESS:
       return {
         ...state,
         ...{
-          isFetching: false
-        }
-      };
-    case UPDATE_LIBS:
-      return {
-        ...state,
-        ...{
+          fetchStatus: fetchStatus.SUCCESS,
+          isNoneffective: false,
+          lastUpdated: + new Date(),
           data: action.data
         }
       };
-    case INVALIDATE_LIBS:
+    case FETCH_LIBS_FAILURE:
       return {
         ...state,
         ...{
-          didInvalidate: action.didInvalidate
+          fetchStatus: fetchStatus.ERROR
         }
       };
     default:
