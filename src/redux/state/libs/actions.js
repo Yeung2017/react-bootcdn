@@ -6,7 +6,7 @@ export const fetchLibsSuccess = (data) => ({type: FETCH_LIBS_SUCCESS, data});
 
 export const fetchLibsFailure = () => ({type: FETCH_LIBS_FAILURE});
 
-export const fetchLibs = (dispatch) => {
+export const fetchLibs = () => (dispatch) => {
   dispatch(fetchLibsStarted());
   const url = 'https://api.bootcdn.cn/libraries.min.json';
   fetch(url).then(res => {
