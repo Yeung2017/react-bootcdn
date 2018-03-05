@@ -8,7 +8,7 @@ export const selectVisibleLibs = createSelector(
     if(searchName) {
       return libs.filter(v=>v[0]===searchName);
     }else {
-      return isShowAllLibs ? libs : libs.slice(0,100);
+      return isShowAllLibs ? libs : libs.slice(0,20);
     }
   }
 );
