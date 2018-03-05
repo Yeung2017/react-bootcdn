@@ -6,12 +6,13 @@ export default(state=initialState,action) => {
     case SET_LIBS_FILTER:
       return {
         ...state,
-        libsFilter: action.libsFilter
+        ...{libsFilter: action.libsFilter}
       };
     case SET_LIBS_SHOW_ALL:
+      console.log(action);
       return {
         ...state,
-        isShowAllLibs: action.isShowAllLibs
+        ...{isShowAllLibs: action.isLibsShowAll}
       };
     default:
       return state;

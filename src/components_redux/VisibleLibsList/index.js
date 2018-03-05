@@ -5,7 +5,7 @@ const mapStateToProps = (state, ownProps) => ({
   data: ownProps.data || state.libs.data,
   isShowAllLibLink: typeof ownProps.isShowAllLibLink === 'boolean'
     ? ownProps.isShowAllLibLink
-    : state.libsFilters.libsFilter
+    : !state.libsFilter.isShowAllLibs
 });
 
 const mapDispatchToProps = dispatch => ({});

@@ -1,5 +1,5 @@
 import {combineReducers} from 'redux';
 import libs from './state/libs/reducer';
-import libsFilters from './state/libsFilter/reducer';
+import libsFilter from './state/libsFilter/reducer';
 
-export default combineReducers({libs, libsFilters});
+export default combineReducers({libs, libsFilter});

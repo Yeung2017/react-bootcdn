@@ -8,60 +8,30 @@ import MostPopularLibBar from '../../components/MostPopularLibBar';
 import VisibleLibsList from '../../components_redux/VisibleLibsList';
 import store from '../../redux/store';
 import {fetchLibs} from '../../redux/state/libs/actions';
+import {setLibsShowAll} from '../../redux/state/libsFilter/actions';
 import {once as fp_once} from 'lodash/fp';
+import {mostPopularLibBarData} from '../../constants/mostPopularLibBarData';
 
 import './style.css';
 
-const mostPopularLibBarData = [
-  {
-    imgUrl: '/img/bootstrap.svg',
-    LinkTo: '/',
-    text: 'bootstrap'
-  }, {
-    imgUrl: '/img/react.svg',
-    LinkTo: '/',
-    text: 'react'
-  }, {
-    imgUrl: '/img/jquery.svg',
-    LinkTo: '/',
-    text: 'jquery'
-  }, {
-    imgUrl: '/img/angular-icon.svg',
-    LinkTo: '/',
-    text: 'angular'
-  }, {
-    imgUrl: '/img/vue.svg',
-    LinkTo: '/',
-    text: 'vue'
-  }, {
-    imgUrl: '/img/backbone-icon.svg',
-    LinkTo: '/',
-    text: 'backbone'
-  }, {
-    imgUrl: '/img/lodash.svg',
-    LinkTo: '/',
-    text: 'lodash'
-  }, {
-    imgUrl: '/img/momentjs.svg',
-    LinkTo: '/',
-    text: 'momentjs'
-  }
-];
 class PageIndex extends Component {
   handleOnceFetchLibs = fp_once(() => {
-    
+    this.props.match.params.all === 'all' && store.dispatch(fetchLibs());
   })
+  handleSetLibsShowAll = () => {
+    this.props.match.params.all === 'all'
+      ? store.dispatch(setLibsShowAll(true))
+      : store.dispatch(setLibsShowAll(false));
+  }
   componentDidMount() {
+    this.handleSetLibsShowAll();
     this.handleOnceFetchLibs();
   }
   componentDidUpdate() {
+    this.handleSetLibsShowAll();
     this.handleOnceFetchLibs();
   }
   render() {
-    const {match} = this.props;
-    const {
-      all = ''
-    } = match.params;
     return (
       <div className="page-index">
         {/* header */}
@@ -92,7 +62,7 @@ class PageIndex extends Component {
           </div>
           <div className="page-index__LibList">
             <div className="container">
-              <VisibleLibsList />
+              <VisibleLibsList/>
             </div>
           </div>
         </div>
