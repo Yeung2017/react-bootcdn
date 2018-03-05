@@ -1,8 +1,8 @@
 import { SET_LIBS_FILTER, SET_LIBS_SHOW_ALL } from './actionTypes';
 
-export const setLibsFilter = (libsFilter) => ({
+export const setLibsFilter = (searchName) => ({
   type: SET_LIBS_FILTER,
-  libsFilter
+  searchName
 });
 
 export const setLibsShowAll = (isLibsShowAll) => ({

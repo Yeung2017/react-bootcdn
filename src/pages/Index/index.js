@@ -16,8 +16,11 @@ import './style.css';
 
 class PageIndex extends Component {
   handleOnceFetchLibs = fp_once(() => {
-    this.props.match.params.all === 'all' && store.dispatch(fetchLibs());
+    store.dispatch(fetchLibs());
   })
+  handleOnceFetchLibsIfNeed = () => {
+    (this.props.match.url === '/' || this.props.match.url === '/all') && this.handleOnceFetchLibs();
+  }
   handleSetLibsShowAll = () => {
     this.props.match.params.all === 'all'
       ? store.dispatch(setLibsShowAll(true))
@@ -25,11 +28,11 @@ class PageIndex extends Component {
   }
   componentDidMount() {
     this.handleSetLibsShowAll();
-    this.handleOnceFetchLibs();
+    this.handleOnceFetchLibsIfNeed();
   }
   componentDidUpdate() {
     this.handleSetLibsShowAll();
-    this.handleOnceFetchLibs();
+    this.handleOnceFetchLibsIfNeed();
   }
   render() {
     return (
