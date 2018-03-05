@@ -49,7 +49,7 @@ const mostPopularLibBarData = [
 ];
 class PageIndex extends Component {
   handleOnceFetchLibs = fp_once(() => {
-    this.props.match.params.all && store.dispatch(fetchLibs());
+    
   })
   componentDidMount() {
     this.handleOnceFetchLibs();
@@ -92,7 +92,7 @@ class PageIndex extends Component {
           </div>
           <div className="page-index__LibList">
             <div className="container">
-              <VisibleLibsList isShowAllLibLink={all !== 'all'}/>
+              <VisibleLibsList />
             </div>
           </div>
         </div>
