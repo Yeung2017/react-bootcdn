@@ -7,7 +7,8 @@ import Search from '../../components/Search';
 import MostPopularLibBar from '../../components/MostPopularLibBar';
 import VisibleLibsList from '../../components_redux/VisibleLibsList';
 import store from '../../redux/store';
-import { fetchLibs } from '../../redux/state/libs/actions';
+import {fetchLibs} from '../../redux/state/libs/actions';
+import {once as fp_once} from 'lodash/fp';
 
 import './style.css';
 
@@ -47,8 +48,14 @@ const mostPopularLibBarData = [
   }
 ];
 class PageIndex extends Component {
-  componentDidMount () {
-    store.dispatch(fetchLibs());
+  handleOnceFetchLibs = fp_once(() => {
+    this.props.match.params.all && store.dispatch(fetchLibs());
+  })
+  componentDidMount() {
+    this.handleOnceFetchLibs();
+  }
+  componentDidUpdate() {
+    this.handleOnceFetchLibs();
   }
   render() {
     const {match} = this.props;

@@ -1,4 +1,5 @@
 import {FETCH_LIBS_STARTED, FETCH_LIBS_SUCCESS, FETCH_LIBS_FAILURE} from './actionTypes';
+import {uniqBy as fp_uniqBy} from 'lodash/fp';
 
 export const fetchLibsStarted = () => ({type: FETCH_LIBS_STARTED});
 
@@ -15,5 +16,5 @@ export const fetchLibs = () => (dispatch) => {
       throw new Error('Fail to get response with status ' + res.status);
     }
     return res.json();
-  }).then(data => dispatch(fetchLibsSuccess(data)));
+  }).then(data => dispatch(fetchLibsSuccess(fp_uniqBy('0', data) || [])));
 };
