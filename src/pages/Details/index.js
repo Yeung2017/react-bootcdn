@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import TopNavBar from '../../components/TopNavBar';
 import TitleCaption from '../../components/TitleCaption';
-import store from '../../redux/store';
 import {connect} from 'react-redux';
 import {get as fp_get} from 'lodash/fp';
 
