@@ -13,7 +13,7 @@ const LibList = ({data, isShowAllLibLink}) => {
       }}>
         {data.map((v => (
           <li key={v[0]}>
-            <Link to="/"><LibListItem name={v[0]} desc={v[1]} star={v[2]}/></Link>
+            <Link to={`/lib-details/${v[0]}`}><LibListItem name={v[0]} desc={v[1]} star={v[2]}/></Link>
           </li>
         )))}
         {isShowAllLibLink
