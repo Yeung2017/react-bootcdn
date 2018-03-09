@@ -1,11 +1,11 @@
 import {FETCH_LIBS_STARTED, FETCH_LIBS_SUCCESS, FETCH_LIBS_FAILURE} from './actionTypes';
 import {uniqBy as fp_uniqBy} from 'lodash/fp';
 
-export const fetchLibsStarted = () => ({type: FETCH_LIBS_STARTED});
+const fetchLibsStarted = () => ({type: FETCH_LIBS_STARTED});
 
-export const fetchLibsSuccess = (data) => ({type: FETCH_LIBS_SUCCESS, data});
+const fetchLibsSuccess = (data) => ({type: FETCH_LIBS_SUCCESS, data});
 
-export const fetchLibsFailure = () => ({type: FETCH_LIBS_FAILURE});
+const fetchLibsFailure = () => ({type: FETCH_LIBS_FAILURE});
 
 export const fetchLibs = () => (dispatch) => {
   dispatch(fetchLibsStarted());

@@ -1,17 +1,17 @@
-import {FETCH_LIBS_STARTED, FETCH_LIBS_SUCCESS, FETCH_LIBS_FAILURE} from './actionTypes';
+import {FETCH_LIB_DETAILS_STARTED, FETCH_LIB_DETAILS_FAILURE, FETCH_LIB_DETAILS_SUCCESS} from './actionTypes';
 import initialState from './initialState';
 import {fetchStatus} from '../../../constants/fetchStatus';
 
-export default (state = initialState, action) => {
+export default(state = initialState, action) => {
   switch (action.type) {
-    case FETCH_LIBS_STARTED:
+    case FETCH_LIB_DETAILS_STARTED:
       return {
         ...state,
         ...{
           fetchStatus: fetchStatus.FETCHING
         }
       };
-    case FETCH_LIBS_SUCCESS:
+    case FETCH_LIB_DETAILS_SUCCESS:
       return {
         ...state,
         ...{
@@ -21,11 +21,12 @@ export default (state = initialState, action) => {
           data: action.data
         }
       };
-    case FETCH_LIBS_FAILURE:
+    case FETCH_LIB_DETAILS_FAILURE:
       return {
         ...state,
         ...{
-          fetchStatus: fetchStatus.ERROR
+          fetchStatus: fetchStatus.ERROR,
+          isNoneffective: true
         }
       };
     default:
