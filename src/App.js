@@ -8,6 +8,8 @@ import PageBlog from './pages/Blog';
 import PageApi from './pages/Api';
 import PageAbout from './pages/About';
 
+import './App.css';
+
 class App extends Component {
   render() {
     return (

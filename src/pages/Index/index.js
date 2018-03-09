@@ -38,7 +38,7 @@ class PageIndex extends Component {
     return (
       <div className="page-index">
         {/* header */}
-        <header className="page-index__header">
+        <header className="page__header page-index__header">
           <div className="container">
             <TopNavBar/>
             <TitleCaption
