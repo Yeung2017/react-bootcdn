@@ -8,13 +8,17 @@ import MostPopularLibBar from '../../components/MostPopularLibBar';
 import VisibleLibsList from '../../components_redux/VisibleLibsList';
 import store from '../../redux/store';
 import {fetchLibs} from '../../redux/state/libs/actions';
-import {setLibsShowAll} from '../../redux/state/libsFilter/actions';
-import {once as fp_once} from 'lodash/fp';
+import {setLibsFilter, setLibsShowAll} from '../../redux/state/libsFilter/actions';
+import {once as fp_once, debounce as fp_debounce} from 'lodash/fp';
 import {mostPopularLibBarData} from '../../constants/mostPopularLibBarData';
 
 import './style.css';
 
 class PageIndex extends Component {
+  constructor(props) {
+    super(props);
+    this.handleSearchChange = fp_debounce(400,(filter)=>store.dispatch(setLibsFilter(filter))); 
+  }
   handleOnceFetchLibs = fp_once(() => {
     store.dispatch(fetchLibs());
   })
@@ -47,7 +51,7 @@ class PageIndex extends Component {
               desc="共收录了 3318 个前端开源项目"/>
             <Row type="flex" justify="center">
               <Col md={16}>
-                <Search/>
+                <Search onChange={filter=>this.handleSearchChange(filter)} />
               </Col>
             </Row>
           </div>

@@ -20,7 +20,7 @@ export class Search extends Component {
     this.setState({[name]: value});
     this
       .props
-      .onChange();
+      .onChange(value);
   }
 
   handleSearchFocus = () => {
