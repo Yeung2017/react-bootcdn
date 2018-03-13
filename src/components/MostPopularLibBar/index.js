@@ -23,7 +23,7 @@ MostPopularLibBar.propTypes = {
   data: PropTypes.array
 };
 
-MostPopularLibBar.propTypes = {
+MostPopularLibBar.defaultProps = {
   data: []
 };
 
