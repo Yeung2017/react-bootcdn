@@ -1,0 +1,33 @@
+.c-LinkNavBar {
+  border-bottom: 1px solid rgb(227, 227, 227);
+  background-color: rgb(245, 245, 245);
+}
+
+.c-LinkNavBarList {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 0;
+}
+
+.c-LinkNavBarList__item {
+  margin: 10px;
+}
+
+.c-LinkNavBarItem__link {
+  color: #2cc36b;
+  font-size: 14px;
+}
+
+.c-LinkNavBarItem__link:link,
+.c-LinkNavBarItem__link:visited,
+.c-LinkNavBarItem__link:hover,
+.c-LinkNavBarItem__link:active {
+  color: #2cc36b;
+}
+
+.c-LinkNavBarItem__link .iconfont {
+  color: #a3a3a4;
+  font-size: 16px;
+}
