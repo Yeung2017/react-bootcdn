@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import TopNavBar from '../../components/TopNavBar';
 import TitleCaption from '../../components/TitleCaption';
 import LinkNavBar from '../../components/LinkNavBar';
+import LibDetailsList from '../../components/LibDetailsList';
 import {get as fp_get} from 'lodash/fp';
 import {linkNavBarData} from '../../constants/linkNavBarData';
 
@@ -22,6 +23,13 @@ class PageDetails extends Component {
         {/* header end */}
         {/* NavBar */}
         <LinkNavBar listData={linkNavBarData}/> {/* NavBar end */}
+        {/* main */}
+        <div className="page-details__main">
+          <div className="container">
+            <LibDetailsList/>
+          </div>
+        </div>
+        {/* main end */}
       </div>
     );
   }
