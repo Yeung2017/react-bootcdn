@@ -2,8 +2,8 @@ import { createSelector } from 'reselect';
 import {includes as fp_includes} from 'lodash/fp';
 
 export const selectVisibleLibs = createSelector(
-  state=>state.libs.data,
-  state=>state.libsFilter,
+  state=>(state.libs.data || []),
+  state=>(state.libsFilter || '' ),
   (libs,libsFilter) => {
     const {isShowAllLibs,searchName} = libsFilter;
     if(searchName) {

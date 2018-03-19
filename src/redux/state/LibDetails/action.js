@@ -13,7 +13,7 @@ const fetchLibDetailsFailure = () => ({
   type: FETCH_LIB_DETAILS_FAILURE
 });
 
-export const fetchCurrentLibDetails = (libName) => (dispatch) => {
+export const fetchLibDetails = (libName) => (dispatch) => {
   dispatch(fetchLibDetailsStarted);
   const url = `https://api.bootcdn.cn/libraries/${libName}.min.json`;
   fetch(url).then(res=>{

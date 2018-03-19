@@ -5,7 +5,7 @@ import './style.css';
 const LibDetailsListCard = ({url}) => {
   return (
     <div className="c-LibDetailsListCard">
-      <span className="c-LibDetailsListCard__url"><i className="iconfont icon-jiesuo"></i>{url}</span>
+      <span className="c-LibDetailsListCard__url"><i className="iconfont icon-jiesuo"></i>{`https://cdn.bootcss.com/${url}`}</span>
       <span className="c-LibDetailsListCard__copy-link">复制Link链接</span>
       <span className="c-LibDetailsListCard__copy-url">复制链接</span>
     </div>
@@ -40,37 +40,7 @@ LibDetailsList.propTypes = {
 };
 
 LibDetailsList.defaultProps = {
-  listData: [
-    {
-      version: "4.0.0",
-      files: [
-        "css/bootstrap-grid.css",
-        "css/bootstrap-grid.min.css",
-        "css/bootstrap-reboot.css",
-        "css/bootstrap-reboot.min.css",
-        "css/bootstrap.css",
-        "css/bootstrap.min.css",
-        "js/bootstrap.bundle.js",
-        "js/bootstrap.bundle.min.js",
-        "js/bootstrap.js",
-        "js/bootstrap.min.js"
-      ]
-    }, {
-      version: "4.0.0-beta.3",
-      files: [
-        "css/bootstrap-grid.css",
-        "css/bootstrap-grid.min.css",
-        "css/bootstrap-reboot.css",
-        "css/bootstrap-reboot.min.css",
-        "css/bootstrap.css",
-        "css/bootstrap.min.css",
-        "js/bootstrap.bundle.js",
-        "js/bootstrap.bundle.min.js",
-        "js/bootstrap.js",
-        "js/bootstrap.min.js"
-      ]
-    }
-  ]
+  listData: []
 };
 
 export default LibDetailsList;
